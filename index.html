@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Battle of Epic Proportions</title>
+    <script>
+    var daddyScore = 0;
+    var daddyCorrect = 0;
+    var daddyIncorrect = 0;
+
+    var kyleScore = 0;
+    var kyleCorrect = 0;
+    var kyleIncorrect = 0;
+    function daddyRight(){
+      daddyScore += 3;
+      daddyCorrect += 1;
+      document.getElementById("daddyScore").innerHTML = daddyScore;
+      document.getElementById("daddyCorrect").innerHTML = daddyCorrect;
+      document.getElementById("daddyWrong").innerHTML = daddyIncorrect;
+    }
+    function daddyNone(){
+      daddyIncorrect += 1;
+      document.getElementById("daddyScore").innerHTML = daddyScore;
+      document.getElementById("daddyCorrect").innerHTML = daddyCorrect;
+      document.getElementById("daddyWrong").innerHTML = daddyIncorrect;
+    }
+    function daddyWrong(){
+      daddyIncorrect += 1;
+      document.getElementById("daddyScore").innerHTML = daddyScore;
+      document.getElementById("daddyCorrect").innerHTML = daddyCorrect;
+      document.getElementById("daddyWrong").innerHTML = daddyIncorrect;
+    }
+    function kyleRight(){
+      kyleScore += 1;
+      kyleCorrect += 1;
+      document.getElementById("kyleScore").innerHTML = kyleScore;
+      document.getElementById("kyleCorrect").innerHTML = kyleCorrect;
+      document.getElementById("kyleWrong").innerHTML = kyleIncorrect;
+    }
+    function kyleNone(){
+      kyleIncorrect += 1;
+      document.getElementById("kyleScore").innerHTML = kyleScore;
+      document.getElementById("kyleCorrect").innerHTML = kyleCorrect;
+      document.getElementById("kyleWrong").innerHTML = kyleIncorrect;
+    }
+    function kyleWrong(){
+      kyleScore -= 1;
+      kyleIncorrect += 1;
+      document.getElementById("kyleScore").innerHTML = kyleScore;
+      document.getElementById("kyleCorrect").innerHTML = kyleCorrect;
+      document.getElementById("kyleWrong").innerHTML = kyleIncorrect;
+    }
+    </script>
+  </head>
+  <body>
+    <p>Rules for playing music: A song will be played, and then each person must shout out the name of the song (artist name is optional). The person who shouts out the song gets to check the song name. If it is right, the person shows the other person and <strong>another song is played immediately.</strong> If it is wrong, the other person has the rest of the song to guess the name. In the case of a possible loophole, Kyle reserves the right to change the rules. He will die a painful death if he tries to change the rules in order to gain an unfair advantage. PS I have been practicing for the last few hours, so I won't need to do that.</p>
+    <p>Rules for scoring:<br>If Kyle gets it right, he gains 1 point.<br>If Daddy gets it right, he gains 3 points.<br><br>If Kyle gets it wrong, he loses 1 point.<br>If Daddy gets it wrong, nothing happens.<br><br>No guess means that the score does not change. Guessing after someone has gotten it correct is equivalent to no guess. It still counts as a wrong answer, though, but only the score matters in the end. The number correct and the number wrong is just extra stats.</p>
+    <table>
+      <tr>
+        <th></th>
+        <th>Kyle</th>
+        <th>Daddy</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type = "button" onclick = "kyleRight()">GOT IT!</button></td>
+        <td><button type = "button" onclick = "daddyRight()">GOT IT!</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type = "button" onclick = "kyleNone()">No guess...</button></td>
+        <td><button type = "button" onclick = "daddyNone()">No guess...</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type = "button" onclick = "kyleWrong()">Wrong guess...</button></td>
+        <td><button type = "button" onclick = "daddyWrong()">Wrong guess...</button></td>
+      </tr>
+      <tr>
+        <td>Score:</td>
+        <td id = "kyleScore">0</td>
+        <td id = "daddyScore">0</td>
+      </tr>
+      <tr>
+        <td>Number Correct:</td>
+        <td id = "kyleCorrect">0</td>
+        <td id = "daddyCorrect">0</td>
+      </tr>
+      <tr>
+        <td>Number Wrong:</td>
+        <td id = "kyleWrong">0</td>
+        <td id = "daddyWrong">0</td>
+      </tr>
+    </table>
+    
+    
+    
+    
+  </body>
+</html>
